@@ -9,9 +9,9 @@
 	</head>
 
 	<body>
-        <h1 class="startH1">second</h1>
+        <h1 class="startH1">first</h1>
         <div class="logForm">
-            <form action="connect" method="post">
+            <form action="personData" method="post">
                 <table>
                     <tr>
                         <td>name</td>
@@ -26,20 +26,8 @@
                         <td><input type="text" name="eMail"/></td>
                     </tr>
                     <tr>
-                        <td>name</td>
-                        <td><input type="text" name="name"/></td>
-                    </tr>
-                    <tr>
-                        <td>surname</td>
-                        <td><input type="text" name="surname"/></td>
-                    </tr>
-                    <tr>
-                        <td>e-mail</td>
-                        <td><input type="text" name="eMail"/></td>
-                    </tr>
-                    <tr>
                         <td></td>
-                        <td><input type="submit" value="connect"/></td>
+                        <td><input type="submit" value="registration"/></td>
                     </tr>
                 </table>
             </form>

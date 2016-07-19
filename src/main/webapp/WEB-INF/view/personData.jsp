@@ -9,10 +9,22 @@
 	</head>
 
 	<body>
-        <h1 class="startH1">first</h1>
+        <h1 class="startH1">second</h1>
         <div class="logForm">
-            <form action="connect" method="post">
+            <form action="confirmation" method="post">
                 <table>
+                    <tr>
+                        <td>first field</td>
+                        <td><input type="text" name="firstField"/></td>
+                    </tr>
+                    <tr>
+                        <td>second field</td>
+                        <td><input type="text" name="secondField"/></td>
+                    </tr>
+                    <tr>
+                        <td>third field</td>
+                        <td><input type="text" name="thirdField"/></td>
+                    </tr>
                     <tr>
                         <td>name</td>
                         <td><input type="text" name="name"/></td>
@@ -22,12 +34,8 @@
                         <td><input type="text" name="surname"/></td>
                     </tr>
                     <tr>
-                        <td>e-mail</td>
-                        <td><input type="text" name="eMail"/></td>
-                    </tr>
-                    <tr>
                         <td></td>
-                        <td><input type="submit" value="connect"/></td>
+                        <td><input type="submit" value="send"/></td>
                     </tr>
                 </table>
             </form>
