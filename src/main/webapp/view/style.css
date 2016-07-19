@@ -1,0 +1,39 @@
+body{
+    margin: 0;
+}
+.startH1{
+    text-align: center;
+    top: 10px;
+    font-size: 100pt;
+}
+
+.logForm{
+    margin: auto;
+    width: 280px;
+    background: #ccc;
+    padding: 20px;
+}
+
+.mainPageLayout{
+    margin: auto;
+    width:80%;
+    height: 100%;
+    background: #ccc;
+    padding: 40px;
+}
+
+.leftLayout{
+    height: 100%;
+    background: #D5DDDD;
+    padding: 40px;
+    float:left;
+    margin-right: 40px;
+}
+
+.content{
+    height: 100%;
+    width:60%;
+    background: #D5DDDD;
+    padding: 40px;
+    float:left;
+}
