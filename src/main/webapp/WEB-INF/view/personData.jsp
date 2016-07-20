@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 	<head>
 		<title>SQLCmd</title>
@@ -9,36 +10,39 @@
 	</head>
 
 	<body>
-        <h1 class="startH1">second</h1>
+        <h1 class="startH1">${usere.geteMail()}</h1>
         <div class="logForm">
-            <form action="confirmation" method="post">
+            <form:form action="confirmation" commandName="user" method="post">
                 <table>
+                    <form:input type="hidden" path="name" value="${user.getName()}"/>
+                    <form:input type="hidden" path="surname" value="${user.getSurname()}"/>
+                    <form:input type="hidden" path="eMail" value="${user.geteMail()}"/>
                     <tr>
                         <td>first field</td>
-                        <td><input type="text" name="firstField"/></td>
+                        <td><form:input type="text" path="fieldOne"/></td>
                     </tr>
                     <tr>
                         <td>second field</td>
-                        <td><input type="text" name="secondField"/></td>
+                        <td><form:input type="text" path="fieldTwo"/></td>
                     </tr>
                     <tr>
                         <td>third field</td>
-                        <td><input type="text" name="thirdField"/></td>
+                        <td><form:input type="text" path="fieldThree"/></td>
                     </tr>
                     <tr>
-                        <td>name</td>
-                        <td><input type="text" name="name"/></td>
+                        <td>upload .doc, .pdf, .txt</td>
+                        <td><form:input type="file" path="cv" accept=".doc, .txt, .pdf"/></td>
                     </tr>
                     <tr>
-                        <td>surname</td>
-                        <td><input type="text" name="surname"/></td>
+                        <td>upload image</td>
+                        <td><form:input type="file" path="photo" accept=".jpg, .jpeg, .gif"/></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td><input type="submit" value="send"/></td>
                     </tr>
                 </table>
-            </form>
+            </form:form>
         </div>
 	</body>
 </html>

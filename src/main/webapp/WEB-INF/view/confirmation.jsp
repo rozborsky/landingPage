@@ -10,5 +10,10 @@
 
 	<body>
         <h1 class="startH1">you send data</h1>
+        <p>${user.getName()}</p>
+        <p>${user.getSurname()}</p>
+        <p>${user.geteMail()}</p>
+        <p>${user.getFieldOne()}</p>
+        <p>${user.getFieldTwo()}</p>
 	</body>
 </html>

@@ -1,6 +1,7 @@
 package ua.rozborskyRoman.classPackage;
 
 import org.hibernate.validator.constraints.Email;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -8,17 +9,18 @@ import javax.validation.constraints.Size;
 /**
  * Created by roman on 20.07.2016.
  */
+
 public class user {
     @NotNull
-    @Size(min = 2, max = 20, message = "name must be fron 2 to 20 symbols")
+    @Size(min = 2, max = 20, message = "name must be from 2 to 20 symbols")
     private String name;
 
     @NotNull
-    @Size(min = 2, max = 20, message = "name must be fron 2 to 20 symbols")
+    @Size(min = 2, max = 20, message = "surname must be from 2 to 20 symbols")
     private String surname;
 
     @NotNull
-    @Email
+    @Email(message = "not valid e-mail")
     private String eMail;
 
     private String fieldOne;
