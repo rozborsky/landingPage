@@ -1,0 +1,21 @@
+CREATE TABLE public.employee
+(
+   id integer PRIMARY KEY DEFAULT nextval('id_employee'),
+   name text NOT NULL,
+   surname text NOT NULL,
+   "eMail" text NOT NULL,
+   language text NOT NULL,
+   experience text NOT NULL,
+   city text NOT NULL,
+   photo text,
+   cv text
+)
+
+CREATE SEQUENCE public.id_employee
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 999999
+  START 1
+  CACHE 1;
+ALTER TABLE public.id_employee
+  OWNER TO postgres;
