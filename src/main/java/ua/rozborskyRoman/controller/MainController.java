@@ -1,13 +1,15 @@
 package ua.rozborskyRoman.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
-import ua.rozborskyRoman.classPackage.user;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
+import ua.rozborskyRoman.classPackage.Employee;
+import ua.rozborskyRoman.classPackage.InsertEmployeeMySQL;
+import ua.rozborskyRoman.interfaces.Person;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 
@@ -15,23 +17,29 @@ import javax.validation.Valid;
  * Created by roman on 19.07.2016.
  */
 @Controller
+@SessionAttributes("employee")
 public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView registration() {
-        return new ModelAndView ("registration", "user", new user());
+    public String registration( Model model) {
+        model.addAttribute("employee", new Employee());
+        return "registration";
     }
 
     @RequestMapping(value = "/personData", method = RequestMethod.POST)
-    public ModelAndView personData(@Valid @ModelAttribute user user, BindingResult bindingResult) {
+    public String personData(@Valid @ModelAttribute Employee employee, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return new ModelAndView ("registration");
+            return "registration";
         }
-        return new ModelAndView ("personData");
+        return "personData";
     }
 
     @RequestMapping(value = "/confirmation", method = RequestMethod.POST)
-    public String confirmation(@ModelAttribute user user) {
+    public String confirmation(HttpSession session, @ModelAttribute Employee employee, SessionStatus status) {
+        //status.setComplete();
+        //new SendLetter();//TODO add parameters in constructor
+//        InsertEmployeeMySQL insertEmployee = new InsertEmployeeMySQL();//TODO   <---new
+//        insertEmployee.insert(user);
         return "confirmation";
     }
 }

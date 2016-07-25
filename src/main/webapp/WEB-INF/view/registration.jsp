@@ -10,9 +10,9 @@
 	</head>
 
 	<body>
-        <h1 class="startH1">firstii</h1>
+        <h1 class="startH1">first</h1>
         <div class="logForm">
-            <form:form action="personData" commandName="user" method="post">
+            <form:form action="personData" modelAttribute="employee" method="post">
                 <table>
                     <tr>
                         <td>name</td>

@@ -5,29 +5,28 @@
 	<head>
 		<title>SQLCmd</title>
         <style>
-           <%@include file='style.css' %>
+           <%@include file='style.css'%>
         </style>
 	</head>
 
 	<body>
-        <h1 class="startH1">${usere.geteMail()}</h1>
         <div class="logForm">
-            <form:form action="confirmation" commandName="user" method="post">
+            <form:form action="confirmation" modelAttribute="employee" method="post">
                 <table>
-                    <form:input type="hidden" path="name" value="${user.getName()}"/>
-                    <form:input type="hidden" path="surname" value="${user.getSurname()}"/>
-                    <form:input type="hidden" path="eMail" value="${user.geteMail()}"/>
+                    <form:input type="hidden" path="name" value="${employee.getName()}"/>
+                    <form:input type="hidden" path="surname" value="${employee.getSurname()}"/>
+                    <form:input type="hidden" path="eMail" value="${employee.geteMail()}"/>
                     <tr>
-                        <td>first field</td>
-                        <td><form:input type="text" path="fieldOne"/></td>
+                        <td>programming language</td>
+                        <td><form:input type="text" path="programmingLanguage"/></td>
                     </tr>
                     <tr>
-                        <td>second field</td>
-                        <td><form:input type="text" path="fieldTwo"/></td>
+                        <td>experience</td>
+                        <td><form:input type="text" path="experience"/></td>
                     </tr>
                     <tr>
-                        <td>third field</td>
-                        <td><form:input type="text" path="fieldThree"/></td>
+                        <td>city</td>
+                        <td><form:input type="text" path="city"/></td>
                     </tr>
                     <tr>
                         <td>upload .doc, .pdf, .txt</td>
