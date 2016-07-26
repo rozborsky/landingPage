@@ -13,9 +13,6 @@
         <div class="logForm">
             <form:form action="confirmation" modelAttribute="employee" method="post">
                 <table>
-                    <form:input type="hidden" path="name" value="${employee.getName()}"/>
-                    <form:input type="hidden" path="surname" value="${employee.getSurname()}"/>
-                    <form:input type="hidden" path="eMail" value="${employee.geteMail()}"/>
                     <tr>
                         <td>programming language</td>
                         <td><form:input type="text" path="programmingLanguage"/></td>

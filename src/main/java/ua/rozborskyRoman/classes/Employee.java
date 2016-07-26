@@ -1,4 +1,4 @@
-package ua.rozborskyRoman.classPackage;
+package ua.rozborskyRoman.classes;
 
 import org.hibernate.validator.constraints.Email;
 import ua.rozborskyRoman.interfaces.Person;
