@@ -23,7 +23,7 @@ import javax.validation.Valid;
 public class MainController {
 
     @Autowired
-    @Qualifier("insertToMySQL")
+    @Qualifier("insertToSQLite")
     private InsertEmployee insertEmployee;
 
     @Autowired
@@ -46,7 +46,7 @@ public class MainController {
     @RequestMapping(value = "/confirmation", method = RequestMethod.POST)
     public String confirmation(HttpSession session, @ModelAttribute Employee employee, SessionStatus status) {
         status.setComplete();
-        //insertEmployee.insert(employee);
+        insertEmployee.insert(employee);
         //sendLetter.send();//TODO add parameters
         return "confirmation";
     }
