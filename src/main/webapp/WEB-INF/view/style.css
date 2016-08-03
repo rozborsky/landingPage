@@ -37,3 +37,7 @@ body{
     padding: 40px;
     float:left;
 }
+
+#error{
+    color: red;
+}

@@ -9,7 +9,6 @@ CREATE TABLE public.employee
    experience text NOT NULL,
    city text NOT NULL,
    photo text,
-   cv text
 )
 
 CREATE SEQUENCE public.id_employee
@@ -32,6 +31,5 @@ ALTER TABLE public.id_employee
      language text NOT NULL,
      experience text NOT NULL,
      city text NOT NULL,
-     photo text,
-     cv text
+     photo text
   );

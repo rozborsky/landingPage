@@ -65,12 +65,9 @@ public class Employee implements Person{
         return cv;
     }
 
-
     public void setName(String name) { this.name = name; }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+    public void setSurname(String surname) { this.surname = surname; }
 
     public void seteMail(String eMail) {
         this.eMail = eMail;

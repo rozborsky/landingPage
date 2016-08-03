@@ -18,21 +18,21 @@
                         <td>name</td>
                         <td>
                             <form:input type="text" path="name"/>
-                            <form:errors path="name"/>
+                            <form:errors path="name" id="error"/>
                         </td>
                     </tr>
                     <tr>
                         <td>surname</td>
                         <td>
                             <form:input type="text" path="surname"/>
-                            <form:errors path="surname"/>
+                            <form:errors path="surname" id="error"/>
                         </td>
                     </tr>
                     <tr>
                         <td>e-mail</td>
                         <td>
                             <form:input type="text" path="eMail"/>
-                            <form:errors path="eMail"/>
+                            <form:errors path="eMail" id="error"/>
                         </td>
                     </tr>
                     <tr>

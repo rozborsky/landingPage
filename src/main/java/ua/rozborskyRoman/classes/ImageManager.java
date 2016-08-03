@@ -13,7 +13,7 @@ import java.io.IOException;
 @Component
 public class ImageManager {
 
-    final String DIR_WITH_IMAGES = "C:/Users/roman/IdeaProjects/landingPage/src/main/java/ua/rozborskyRoman/classes";
+    final String DIR_WITH_IMAGES = "C:/Users/roman/IdeaProjects/landingPage/src/main/java/ua/rozborskyRoman/images/";
 
     public void validateImage(MultipartFile image) {
         if (!image.getContentType().equals("image/jpeg")) {
@@ -24,7 +24,7 @@ public class ImageManager {
     public void saveImage(String fileName, MultipartFile image)
             throws RuntimeException{
         try{
-            File file = new File(DIR_WITH_IMAGES + "/" + fileName);
+            File file = new File(DIR_WITH_IMAGES + fileName);
             FileUtils.writeByteArrayToFile(file, image.getBytes());
         } catch (IOException exception) {
             throw new RuntimeException();

@@ -25,18 +25,18 @@
                         <td>city</td>
                         <td><form:input type="text" path="city"/></td>
                     </tr>
-
                     <tr>
                         <td>upload image</td>
                         <td><input type="file" name="image" accept=".jpg, .jpeg, .gif"/></td>
                     </tr>
+                    <tr>
+                         <td colspan="2"><p id="error">${error}</p></td>
                     <tr>
                         <td></td>
                         <td><input type="submit" value="send"/></td>
                     </tr>
                 </table>
             </form:form>
-            <p id="error">${error}</p>
         </div>
 	</body>
 </html>

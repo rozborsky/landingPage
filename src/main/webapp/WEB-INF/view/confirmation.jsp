@@ -10,9 +10,6 @@
 
 	<body>
         <h1 class="startH1">you send data successfully</h1>
-
-        <h1>cv - ${employee.getCv()}</h1>
-        <h1>img - ${employee.getPhoto()}</h1>
 	</body>
 </html>
 

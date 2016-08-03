@@ -25,13 +25,13 @@ public class InsertEmployeeSQLite implements InsertEmployee{
 
     @Override
     public void insert(Person employee) {
-        String sql = "INSERT INTO employee (name, surname, email, language, experience, city, photo, cv) " +
-                "VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO employee (name, surname, email, language, experience, city, photo) " +
+                "VALUES (?,?,?,?,?,?,?)";
 
         try{
             jdbcTemplate.update(sql, new Object [] {employee.getName(), employee.getSurname(), employee.geteMail(),
                     employee.getProgrammingLanguage(), employee.getExperience(), employee.getCity(),
-                    employee.getPhoto(), employee.getCv()});
+                    employee.getPhoto()});
         }catch (Exception e) {
             e.printStackTrace();
         }

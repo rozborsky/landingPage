@@ -1,6 +1,5 @@
 package ua.rozborskyRoman.controller;
 
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -15,11 +14,8 @@ import ua.rozborskyRoman.classes.ImageManager;
 import ua.rozborskyRoman.classes.SendLetter;
 import ua.rozborskyRoman.interfaces.InsertEmployee;
 
-import javax.servlet.ServletContext;
 
 import javax.validation.Valid;
-import java.io.File;
-import java.io.IOException;
 
 
 /**
@@ -58,23 +54,30 @@ public class MainController {
                                @RequestParam(value = "image", required = false)MultipartFile image) {
 
         if (!image.isEmpty()) {
-            try{
-                imageManager.validateImage(image);
-            } catch (RuntimeException exception) {
-                return new ModelAndView("personData", "error", "Only JPG images are accepted");
-            }
-            try{
-                String newName = employee.getName() + employee.getSurname() + ".jpg";
-                imageManager.saveImage(newName, image);
-                employee.setPhoto(newName);
-            }catch (RuntimeException rException) {
-                return new ModelAndView("personData", "error", "cant save image");
-            }
+            ModelAndView result = saveImage(employee, image);
+            if (result != null) return result;
         }
 
         status.setComplete();
         insertEmployee.insert(employee);
         //sendLetter.send();//TODO add parameters
         return new ModelAndView("confirmation", "", "");
+    }
+
+
+    private ModelAndView saveImage(Employee employee, @RequestParam(value = "image", required = false) MultipartFile image) {
+        try{
+            imageManager.validateImage(image);
+        } catch (RuntimeException exception) {
+            return new ModelAndView("personData", "error", "Only JPG images are accepted");
+        }
+        try{
+            String newName = employee.getName() + employee.getSurname() + ".jpg";
+            imageManager.saveImage(newName, image);
+            employee.setPhoto(newName);
+        }catch (RuntimeException rException) {
+            return new ModelAndView("personData", "error", "cant save image");
+        }
+        return null;
     }
 }
