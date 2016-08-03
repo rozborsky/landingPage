@@ -11,7 +11,7 @@
 
 	<body>
         <div class="logForm">
-            <form:form action="confirmation" modelAttribute="employee" method="post">
+            <form:form action="confirmation" modelAttribute="employee" enctype="multipart/form-data" method="post">
                 <table>
                     <tr>
                         <td>programming language</td>
@@ -25,13 +25,10 @@
                         <td>city</td>
                         <td><form:input type="text" path="city"/></td>
                     </tr>
-                    <tr>
-                        <td>upload .doc, .pdf, .txt</td>
-                        <td><form:input type="file" path="cv" accept=".doc, .txt, .pdf"/></td>
-                    </tr>
+
                     <tr>
                         <td>upload image</td>
-                        <td><form:input type="file" path="photo" accept=".jpg, .jpeg, .gif"/></td>
+                        <td><input type="file" name="image" accept=".jpg, .jpeg, .gif"/></td>
                     </tr>
                     <tr>
                         <td></td>
@@ -39,6 +36,7 @@
                     </tr>
                 </table>
             </form:form>
+            <p id="error">${error}</p>
         </div>
 	</body>
 </html>
