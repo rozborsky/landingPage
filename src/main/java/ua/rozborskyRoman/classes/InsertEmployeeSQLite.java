@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import ua.rozborskyRoman.interfaces.Employee;
 import ua.rozborskyRoman.interfaces.InsertEmployee;
-import ua.rozborskyRoman.interfaces.Person;
 
 import javax.sql.DataSource;
 
@@ -24,16 +24,16 @@ public class InsertEmployeeSQLite implements InsertEmployee{
     }
 
     @Override
-    public void insert(Person employee) {
+    public void insert(Employee employee) {
         String sql = "INSERT INTO employee (name, surname, email, language, experience, city, photo) " +
                 "VALUES (?,?,?,?,?,?,?)";
 
-        try{
-            jdbcTemplate.update(sql, new Object [] {employee.getName(), employee.getSurname(), employee.geteMail(),
-                    employee.getProgrammingLanguage(), employee.getExperience(), employee.getCity(),
-                    employee.getPhoto()});
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try{
+//            jdbcTemplate.update(sql, new Object [] {employee.getName(), employee.getSurname(), employee.geteMail(),
+//                    employee.getProgrammingLanguage(), employee.getExperience(), employee.getCity(),
+//                    employee.getPhoto()});
+//        }catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }
